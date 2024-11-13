@@ -34,6 +34,7 @@
             this.dgv_baocao = new System.Windows.Forms.DataGridView();
             this.btnbaocao = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_baocao)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,12 +67,12 @@
             // dgv_baocao
             // 
             this.dgv_baocao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_baocao.Location = new System.Drawing.Point(-157, 283);
+            this.dgv_baocao.Location = new System.Drawing.Point(55, 262);
             this.dgv_baocao.Name = "dgv_baocao";
             this.dgv_baocao.ReadOnly = true;
             this.dgv_baocao.RowHeadersWidth = 51;
             this.dgv_baocao.RowTemplate.Height = 24;
-            this.dgv_baocao.Size = new System.Drawing.Size(1233, 225);
+            this.dgv_baocao.Size = new System.Drawing.Size(972, 225);
             this.dgv_baocao.TabIndex = 22;
             // 
             // btnbaocao
@@ -93,11 +94,21 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "Báo cáo thống kê thư viện";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(690, 161);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 16);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "label2";
+            // 
             // FormBaoCaoThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1152, 450);
+            this.ClientSize = new System.Drawing.Size(1147, 538);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.cbThongKe);
             this.Controls.Add(this.btnlammoi);
             this.Controls.Add(this.btnexcel);
@@ -106,6 +117,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormBaoCaoThongKe";
             this.Text = "FormBaoCaoThongKe";
+            this.Load += new System.EventHandler(this.FormBaoCaoThongKe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_baocao)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -120,5 +132,6 @@
         private System.Windows.Forms.DataGridView dgv_baocao;
         private System.Windows.Forms.Button btnbaocao;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
