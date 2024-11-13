@@ -357,7 +357,26 @@ namespace Nhom6_QuanLyThuVien
 
             return kn.Readdata(sql, sp);
         }
+        public DataTable GetDocGiaDaTra()
+        {
+            string sql = @"
+    SELECT 
+        DocGia.MaDocGia, 
+        DocGia.HoTen, 
+        SUM(MuonTra.ThanhTien) AS TongTien
+    FROM 
+        MuonTra 
+    INNER JOIN 
+        DocGia ON MuonTra.MaDocGia = DocGia.MaDocGia
+    WHERE 
+        MuonTra.TinhTrang = 'Đã trả'
+    GROUP BY 
+        DocGia.MaDocGia, DocGia.HoTen";
 
+            DataTable dt = kn.Readdata(sql);
+            MessageBox.Show("Số lượng dòng trả về: " + dt.Rows.Count);
+            return dt;
+        }
         #endregion
     }
 }
