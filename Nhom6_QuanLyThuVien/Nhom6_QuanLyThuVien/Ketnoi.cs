@@ -76,6 +76,38 @@ namespace Nhom6_QuanLyThuVien
                 dongkn();
             }
         }
+        public string TongTien()
+        {
+            string tongtien = "0"; // Mặc định là 0 nếu không có kết quả
+            string sql = "SELECT Sum(ThanhTien) FROM MuonTra WHERE TinhTrang = N'Đã trả';";
+
+            using (SqlConnection conn = new SqlConnection(kn))
+            {
+                try
+                {
+                    conn.Open(); // Mở kết nối CSDL
+
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        // Thực thi câu lệnh SQL và nhận giá trị duy nhất từ câu truy vấn
+                        object result = cmd.ExecuteScalar();
+
+                        // Kiểm tra nếu kết quả không rỗng và không phải là NULL
+                        if (result != null && result != DBNull.Value)
+                        {
+                            tongtien = result.ToString(); // Chuyển đổi kết quả thành chuỗi
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Xử lý lỗi (có thể log hoặc hiển thị thông báo)
+                    Console.WriteLine("Lỗi khi lấy tổng tiền: " + ex.Message);
+                }
+            }
+
+            return tongtien; // Trả về tổng tiền dưới dạng chuỗi
+        }
     }
 }
 
