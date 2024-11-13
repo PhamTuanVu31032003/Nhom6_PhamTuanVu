@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Nhom6_QuanLyThuVien
 {
@@ -169,9 +170,13 @@ namespace Nhom6_QuanLyThuVien
 
             return maSach;
         }
-
+        public DataTable timkiemsachdatra()
+        {
+            string sql = "SELECT * FROM MuonTra WHERE TinhTrang =N'Đã trả';";
+            return kn.Readdata(sql);
+        }
         #endregion
-
+        
         #region dùng cho form qly mượn
 
         //thêm lượt mượn
