@@ -38,9 +38,9 @@ namespace Nhom6_QuanLyThuVien
             {
 
 
-                case "Báo cáo tài chính":
-                    result = muonTra.GetDocGiaDaTra(); // Lấy thông tin độc giả đã trả sách
-                    break;
+                //case "Báo cáo tài chính":
+                 //   result = muonTra.GetDocGiaDaTra(); // Lấy thông tin độc giả đã trả sách
+                 //   break;
 
 
 

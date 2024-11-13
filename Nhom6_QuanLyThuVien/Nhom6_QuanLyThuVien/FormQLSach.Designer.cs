@@ -54,6 +54,9 @@
             this.btn_thoat = new System.Windows.Forms.Button();
             this.btn_timkiem = new System.Windows.Forms.Button();
             this.btn_sua = new System.Windows.Forms.Button();
+            this.tb_giamuon = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btn_hienthi = new System.Windows.Forms.Button();
             this.gr.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sach)).BeginInit();
             this.SuspendLayout();
@@ -81,7 +84,7 @@
             // 
             this.btn_xoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_xoa.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_xoa.Location = new System.Drawing.Point(283, 413);
+            this.btn_xoa.Location = new System.Drawing.Point(417, 413);
             this.btn_xoa.Margin = new System.Windows.Forms.Padding(6);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(138, 45);
@@ -94,7 +97,7 @@
             // 
             this.btn_them.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_them.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_them.Location = new System.Drawing.Point(76, 413);
+            this.btn_them.Location = new System.Drawing.Point(213, 413);
             this.btn_them.Margin = new System.Windows.Forms.Padding(6);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(138, 45);
@@ -105,6 +108,8 @@
             // 
             // gr
             // 
+            this.gr.Controls.Add(this.tb_giamuon);
+            this.gr.Controls.Add(this.label4);
             this.gr.Controls.Add(this.cb_matg);
             this.gr.Controls.Add(this.label8);
             this.gr.Controls.Add(this.tb_gia);
@@ -148,7 +153,7 @@
             // tb_gia
             // 
             this.tb_gia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_gia.Location = new System.Drawing.Point(499, 290);
+            this.tb_gia.Location = new System.Drawing.Point(140, 289);
             this.tb_gia.Margin = new System.Windows.Forms.Padding(6);
             this.tb_gia.Name = "tb_gia";
             this.tb_gia.Size = new System.Drawing.Size(298, 30);
@@ -159,7 +164,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label11.Location = new System.Drawing.Point(328, 298);
+            this.label11.Location = new System.Drawing.Point(29, 297);
             this.label11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(73, 22);
@@ -331,7 +336,7 @@
             // 
             this.btn_thoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_thoat.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_thoat.Location = new System.Drawing.Point(994, 413);
+            this.btn_thoat.Location = new System.Drawing.Point(1039, 413);
             this.btn_thoat.Margin = new System.Windows.Forms.Padding(6);
             this.btn_thoat.Name = "btn_thoat";
             this.btn_thoat.Size = new System.Drawing.Size(138, 45);
@@ -344,7 +349,7 @@
             // 
             this.btn_timkiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_timkiem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_timkiem.Location = new System.Drawing.Point(757, 413);
+            this.btn_timkiem.Location = new System.Drawing.Point(841, 413);
             this.btn_timkiem.Margin = new System.Windows.Forms.Padding(6);
             this.btn_timkiem.Name = "btn_timkiem";
             this.btn_timkiem.Size = new System.Drawing.Size(138, 45);
@@ -357,7 +362,7 @@
             // 
             this.btn_sua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_sua.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_sua.Location = new System.Drawing.Point(521, 413);
+            this.btn_sua.Location = new System.Drawing.Point(628, 413);
             this.btn_sua.Margin = new System.Windows.Forms.Padding(6);
             this.btn_sua.Name = "btn_sua";
             this.btn_sua.Size = new System.Drawing.Size(138, 45);
@@ -366,11 +371,46 @@
             this.btn_sua.UseVisualStyleBackColor = true;
             this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
+            // tb_giamuon
+            // 
+            this.tb_giamuon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_giamuon.Location = new System.Drawing.Point(791, 289);
+            this.tb_giamuon.Margin = new System.Windows.Forms.Padding(6);
+            this.tb_giamuon.Name = "tb_giamuon";
+            this.tb_giamuon.Size = new System.Drawing.Size(298, 30);
+            this.tb_giamuon.TabIndex = 23;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(614, 297);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(123, 22);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Giá tiền mượn";
+            // 
+            // btn_hienthi
+            // 
+            this.btn_hienthi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_hienthi.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_hienthi.Location = new System.Drawing.Point(29, 413);
+            this.btn_hienthi.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_hienthi.Name = "btn_hienthi";
+            this.btn_hienthi.Size = new System.Drawing.Size(138, 45);
+            this.btn_hienthi.TabIndex = 32;
+            this.btn_hienthi.Text = "Hiển thị";
+            this.btn_hienthi.UseVisualStyleBackColor = true;
+            this.btn_hienthi.Click += new System.EventHandler(this.btn_hienthi_Click);
+            // 
             // FormQLSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1202, 631);
+            this.Controls.Add(this.btn_hienthi);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_xoa);
             this.Controls.Add(this.btn_them);
@@ -418,5 +458,8 @@
         private System.Windows.Forms.Button btn_thoat;
         private System.Windows.Forms.Button btn_timkiem;
         private System.Windows.Forms.Button btn_sua;
+        private System.Windows.Forms.TextBox tb_giamuon;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btn_hienthi;
     }
 }

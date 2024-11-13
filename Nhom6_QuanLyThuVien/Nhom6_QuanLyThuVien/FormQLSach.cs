@@ -30,8 +30,9 @@ namespace Nhom6_QuanLyThuVien
             int Soluong = int.Parse(tb_soluong.Text);
             int soluongconlai = int.Parse(tb_soluongcl.Text);
             string gia = tb_gia.Text;
+            int giamuon = int.Parse(tb_giamuon.Text);
 
-            sach.Createbook(Masach, Tensach, Matg, Nhaxb, Namxb, theloai, Soluong, soluongconlai, gia);
+            sach.Createbook(Masach, Tensach, Matg, Nhaxb, Namxb, theloai, Soluong, soluongconlai, gia, giamuon);
             dgv_sach.DataSource = null;
             dgv_sach.Rows.Clear();
             FormQLSach_Load(sender, e);
@@ -63,7 +64,8 @@ namespace Nhom6_QuanLyThuVien
             int Soluong = int.Parse(tb_soluong.Text);
             int soluongconlai = int.Parse(tb_soluongcl.Text);
             string gia = tb_gia.Text;
-            sach.Updatebook(Masach, Tensach, Matg, Nhaxb, Namxb, theloai, Soluong, soluongconlai, gia);
+            int giamuon = int.Parse(tb_giamuon.Text);
+            sach.Updatebook(Masach, Tensach, Matg, Nhaxb, Namxb, theloai, Soluong, soluongconlai, gia, giamuon);
             FormQLSach_Load(sender, e);
         }
 
@@ -93,6 +95,7 @@ namespace Nhom6_QuanLyThuVien
                 tb_soluong.Text = row.Cells["SoLuong"].Value.ToString();
                 tb_soluongcl.Text = row.Cells["SoLuongConLai"].Value.ToString();
                 tb_gia.Text = row.Cells["Gia"].Value.ToString();
+                tb_giamuon.Text = row.Cells["GiaMuon"].Value.ToString();
             }
         }
         private void LoadMaTacGiaComboBox()
@@ -105,6 +108,11 @@ namespace Nhom6_QuanLyThuVien
             cb_matg.ValueMember = "MaTacGia"; // Giá trị mã nhà cung cấp
 
             cb_matg.SelectedIndex = -1; // Không chọn mục nào ban đầu
+        }
+
+        private void btn_hienthi_Click(object sender, EventArgs e)
+        {
+            FormQLSach_Load(sender, e);
         }
     }
 }
