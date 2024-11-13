@@ -38,9 +38,9 @@ namespace Nhom6_QuanLyThuVien
             {
 
 
-                //case "Báo cáo tài chính":
-                 //   result = muonTra.GetDocGiaDaTra(); // Lấy thông tin độc giả đã trả sách
-                 //   break;
+                case "Báo cáo tài chính":
+                  result = muonTra.GetDocGiaDaTra(); // Lấy thông tin độc giả đã trả sách
+                    break;
 
 
 
@@ -50,7 +50,7 @@ namespace Nhom6_QuanLyThuVien
 
                     // Không có tùy chọn "Độc giả theo lượt mượn" nữa
             }
-
+            DataTable docGiaDaTra = muonTra.GetDocGiaDaTra();
             // Đổ dữ liệu vào DataGridView
             dgv_baocao.DataSource = result;
         }
