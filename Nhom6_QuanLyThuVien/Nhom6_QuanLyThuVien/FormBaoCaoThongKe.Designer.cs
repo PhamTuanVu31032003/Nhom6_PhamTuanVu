@@ -51,15 +51,15 @@
             // 
             this.cbThongKe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbThongKe.FormattingEnabled = true;
-            this.cbThongKe.Location = new System.Drawing.Point(72, 78);
+            this.cbThongKe.Location = new System.Drawing.Point(59, 78);
             this.cbThongKe.Name = "cbThongKe";
-            this.cbThongKe.Size = new System.Drawing.Size(283, 30);
+            this.cbThongKe.Size = new System.Drawing.Size(354, 30);
             this.cbThongKe.TabIndex = 25;
             // 
             // btnexcel
             // 
             this.btnexcel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnexcel.Location = new System.Drawing.Point(299, 152);
+            this.btnexcel.Location = new System.Drawing.Point(276, 152);
             this.btnexcel.Name = "btnexcel";
             this.btnexcel.Size = new System.Drawing.Size(124, 36);
             this.btnexcel.TabIndex = 23;
@@ -81,7 +81,7 @@
             // btnbaocao
             // 
             this.btnbaocao.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnbaocao.Location = new System.Drawing.Point(50, 152);
+            this.btnbaocao.Location = new System.Drawing.Point(64, 152);
             this.btnbaocao.Name = "btnbaocao";
             this.btnbaocao.Size = new System.Drawing.Size(143, 36);
             this.btnbaocao.TabIndex = 21;

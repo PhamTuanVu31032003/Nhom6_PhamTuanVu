@@ -28,12 +28,9 @@ namespace Nhom6_QuanLyThuVien
         }
         private void LoadThongKeOptions()
         {
-
-            cbThongKe.Items.Add("Báo Cáo Tài Chính");
-
             cbThongKe.Items.Add("Tình trạng sách");
-
-            cbThongKe.SelectedIndex = 0;
+            cbThongKe.Items.Add("Báo Cáo Quá hạn và Mất sách");
+            cbThongKe.SelectedIndex = -1;
         }
         private void btnbaocao_Click(object sender, EventArgs e)
         {
@@ -44,16 +41,7 @@ namespace Nhom6_QuanLyThuVien
 
                 switch (selectedOption)
                 {
-                    case "Báo Cáo Tài Chính":
-                        result = thongke.timkiemsachdatra();
-                        decimal tongTien = ketnoi.TongTien();
-                        label2.Text = $"Tổng tiền: {tongTien}";
-                        int tqh = thongke.demTraQuaHan();
-                        label5.Text = $"Số lượng trả quá hạn: {tqh}";
-                        int lms = thongke.demLamMatSach();
-                        label6.Text = $"Số lượng làm mất sách: {lms}";
-                        break;
-
+                    
                     case "Tình trạng sách":
                         result = thongke.GetAllSach();
                         int soNhap = thongke.sosachNhap();
@@ -63,19 +51,28 @@ namespace Nhom6_QuanLyThuVien
                         label6.Text = null;
                         break;
 
-                    
+                    case "Báo Cáo Quá hạn và Mất sách":
+                        result = thongke.timkiemsachdatra();
+                        decimal tongTien = ketnoi.TongTien();
+                        label2.Text = $"Tổng phí thu: {tongTien}";
+                        int tqh = thongke.demTraQuaHan();
+                        label5.Text = $"Số lượng trả quá hạn: {tqh}";
+                        int lms = thongke.demLamMatSach();
+                        label6.Text = $"Số lượng làm mất sách: {lms}";
+                        break;
+
                 }
 
                 if (result != null && result.Rows.Count > 0)
                 {
+                    DataTable docGiaDaTra = thongke.GetDocGiaDaTra();
                     dgv_baocao.DataSource = result;
                 }
                 else
                 {
                     MessageBox.Show("Không tìm thấy dữ liệu.");
                 }
-                DataTable docGiaDaTra = thongke.GetDocGiaDaTra();
-                dgv_baocao.DataSource = result;
+                
             }
             catch (Exception ex)
             {
