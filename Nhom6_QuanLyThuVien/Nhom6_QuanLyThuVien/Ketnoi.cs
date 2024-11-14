@@ -12,7 +12,7 @@ namespace Nhom6_QuanLyThuVien
     internal class Ketnoi
     {
         SqlConnection conn;
-        string kn = @"Data Source=lenovo-legion5\TUANVU;Initial Catalog=qLyThuVien;Integrated Security=True;";
+        string kn = @"Data Source=DESKTOP-G3ASFOQ\SQLEXPRESS;Initial Catalog=QuanLyThuVien;Integrated Security=True;";
         public void ketnoi()
         {
             conn = new SqlConnection(kn);
@@ -76,37 +76,53 @@ namespace Nhom6_QuanLyThuVien
                 dongkn();
             }
         }
-        public string TongTien()
+
+        //tính tổng tiền
+        public decimal TongTien()
         {
-            string tongtien = "0"; // Mặc định là 0 nếu không có kết quả
-            string sql = "SELECT Sum(ThanhTien) FROM MuonTra WHERE TinhTrang = N'Đã trả';";
+            decimal tongTien = 0;
+            string sql = @"
+                SELECT 
+                    COALESCE(SUM(CASE 
+                        WHEN MT.TinhTrang = N'Làm mất sách' THEN MT.ThanhTien 
+                        WHEN MT.TinhTrang = N'Trả quá hạn' THEN MT.SoLuongMuon * S.GiaMuon
+                        ELSE 0 
+                    END), 0) AS TongTien
+                FROM 
+                    MuonTra MT
+                JOIN 
+                    Sach S ON MT.MaSach = S.MaSach
+                WHERE 
+                    MT.TinhTrang = N'Làm mất sách' OR MT.TinhTrang = N'Trả quá hạn';
+            ";
 
-            using (SqlConnection conn = new SqlConnection(kn))
+            try
             {
-                try
+                ketnoi();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
-                    conn.Open(); // Mở kết nối CSDL
+                    object result = cmd.ExecuteScalar();
 
-                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    if (result != null && result != DBNull.Value)
                     {
-                        // Thực thi câu lệnh SQL và nhận giá trị duy nhất từ câu truy vấn
-                        object result = cmd.ExecuteScalar();
-
-                        // Kiểm tra nếu kết quả không rỗng và không phải là NULL
-                        if (result != null && result != DBNull.Value)
-                        {
-                            tongtien = result.ToString(); // Chuyển đổi kết quả thành chuỗi
-                        }
+                        tongTien = Convert.ToDecimal(result);
+                    }
+                    else
+                    {
+                        tongTien = 0;
                     }
                 }
-                catch (Exception ex)
-                {
-                    // Xử lý lỗi (có thể log hoặc hiển thị thông báo)
-                    Console.WriteLine("Lỗi khi lấy tổng tiền: " + ex.Message);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tính tổng tiền: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                dongkn();
             }
 
-            return tongtien; // Trả về tổng tiền dưới dạng chuỗi
+            return tongTien;
         }
     }
 }
