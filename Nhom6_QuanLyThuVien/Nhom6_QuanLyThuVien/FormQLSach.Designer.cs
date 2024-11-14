@@ -455,6 +455,7 @@
             this.dgv_sach.RowTemplate.Height = 24;
             this.dgv_sach.Size = new System.Drawing.Size(972, 172);
             this.dgv_sach.TabIndex = 0;
+            this.dgv_sach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_sach_CellClick_1);
             // 
             // FormQLSach
             // 

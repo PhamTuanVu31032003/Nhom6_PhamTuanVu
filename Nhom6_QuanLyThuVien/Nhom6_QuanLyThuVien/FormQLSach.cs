@@ -81,7 +81,24 @@ namespace Nhom6_QuanLyThuVien
             this.Close();
         }
 
-        private void dgv_sach_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void LoadMaTacGiaComboBox()
+        {
+            // Lấy danh sách mã nhà cung cấp
+            DataTable ma = sach.Getallmatg();
+
+            cb_matg.DataSource = ma;
+            cb_matg.DisplayMember = "MaTacGia"; // Cột hiển thị
+            cb_matg.ValueMember = "MaTacGia"; // Giá trị mã nhà cung cấp
+
+            cb_matg.SelectedIndex = -1; // Không chọn mục nào ban đầu
+        }
+
+        private void btn_hienthi_Click(object sender, EventArgs e)
+        {
+            FormQLSach_Load(sender, e);
+        }
+
+        private void dgv_sach_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -98,22 +115,6 @@ namespace Nhom6_QuanLyThuVien
                 tb_gia.Text = row.Cells["Gia"].Value.ToString();
                 tb_giamuon.Text = row.Cells["GiaMuon"].Value.ToString();
             }
-        }
-        private void LoadMaTacGiaComboBox()
-        {
-            // Lấy danh sách mã nhà cung cấp
-            DataTable ma = sach.Getallmatg();
-
-            cb_matg.DataSource = ma;
-            cb_matg.DisplayMember = "MaTacGia"; // Cột hiển thị
-            cb_matg.ValueMember = "MaTacGia"; // Giá trị mã nhà cung cấp
-
-            cb_matg.SelectedIndex = -1; // Không chọn mục nào ban đầu
-        }
-
-        private void btn_hienthi_Click(object sender, EventArgs e)
-        {
-            FormQLSach_Load(sender, e);
         }
     }
 }
