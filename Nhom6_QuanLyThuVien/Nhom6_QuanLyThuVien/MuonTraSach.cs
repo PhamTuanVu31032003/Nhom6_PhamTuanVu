@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Nhom6_QuanLyThuVien
 {
@@ -60,6 +61,17 @@ namespace Nhom6_QuanLyThuVien
         public DataTable getPrice(string maS)
         {
             string sql = "SELECT Gia FROM Sach WHERE MaSach = @maS";
+            SqlParameter[] sp = new SqlParameter[]
+            {
+                new SqlParameter("@maS", maS)
+            };
+            return kn.Readdata(sql, sp);
+        }
+
+        //lấy giá cho mượn
+        public DataTable getPriceMuon(string maS)
+        {
+            string sql = "SELECT GiaMuon FROM Sach WHERE MaSach = @maS";
             SqlParameter[] sp = new SqlParameter[]
             {
                 new SqlParameter("@maS", maS)
@@ -170,15 +182,8 @@ namespace Nhom6_QuanLyThuVien
 
             return maSach;
         }
-        public DataTable timkiemsachdatra()
-        {
-            string sql = "SELECT * FROM MuonTra WHERE TinhTrang =N'Đã trả';";
-            return kn.Readdata(sql);
-        }
-      
         
-       
-
+      
         //thêm lượt mượn
         public void CreateMuon(string maGD, string maDG, string tenDG, string maS, string tenS,
             int Soluong, DateTime ngayMuon, DateTime ngayTra, int thanhTien)
@@ -246,8 +251,6 @@ namespace Nhom6_QuanLyThuVien
             kn.CUD(sql, sp);
         }
      
-
-        
         //kiểm tr tình trạng trả sách
         public string KiemTraTinhTrang(DateTime? ngayTra, DateTime ngayPhaiTra)
         {
@@ -335,8 +338,6 @@ namespace Nhom6_QuanLyThuVien
             }
         }
      
-
-       
         //tìm kiếm
         public DataTable SearchMA(string maDG)
         {
@@ -357,26 +358,7 @@ namespace Nhom6_QuanLyThuVien
 
             return kn.Readdata(sql, sp);
         }
-        public DataTable GetDocGiaDaTra()
-        {
-            string sql = @"
-    SELECT 
-        DocGia.MaDocGia, 
-        DocGia.HoTen, 
-        SUM(MuonTra.ThanhTien) AS TongTien
-    FROM 
-        MuonTra 
-    INNER JOIN 
-        DocGia ON MuonTra.MaDocGia = DocGia.MaDocGia
-    WHERE 
-        MuonTra.TinhTrang = 'Đã trả'
-    GROUP BY 
-        DocGia.MaDocGia, DocGia.HoTen";
-
-            DataTable dt = kn.Readdata(sql);
-           // MessageBox.Show("Số lượng dòng trả về: " + dt.Rows.Count);
-            return dt;
-        }
+        
       
     }
 }

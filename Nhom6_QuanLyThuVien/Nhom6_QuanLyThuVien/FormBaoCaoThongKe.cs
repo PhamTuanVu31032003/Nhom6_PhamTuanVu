@@ -18,9 +18,8 @@ namespace Nhom6_QuanLyThuVien
     public partial class FormBaoCaoThongKe : Form
     {
         Docgia docgia = new Docgia();
-        Sach sach = new Sach();
         Ketnoi ketnoi = new Ketnoi();
-        MuonTraSach muonTra = new MuonTraSach();
+        ThongKe thongke = new ThongKe();
         public FormBaoCaoThongKe()
         {
             InitializeComponent();
@@ -33,36 +32,56 @@ namespace Nhom6_QuanLyThuVien
             cbThongKe.Items.Add("Báo Cáo Tài Chính");
 
             cbThongKe.Items.Add("Tình trạng sách");
+
             cbThongKe.SelectedIndex = 0;
         }
         private void btnbaocao_Click(object sender, EventArgs e)
         {
-            string selectedOption = cbThongKe.SelectedItem.ToString();
-            DataTable result = new DataTable();
-
-            switch (selectedOption)
+            try
             {
-         
-              
+                string selectedOption = cbThongKe.SelectedItem.ToString();
+                DataTable result = new DataTable();
 
-                case "Báo Cáo Tài Chính":
+                switch (selectedOption)
+                {
+                    case "Báo Cáo Tài Chính":
+                        result = thongke.timkiemsachdatra();
+                        decimal tongTien = ketnoi.TongTien();
+                        label2.Text = $"Tổng tiền: {tongTien}";
+                        int tqh = thongke.demTraQuaHan();
+                        label5.Text = $"Số lượng trả quá hạn: {tqh}";
+                        int lms = thongke.demLamMatSach();
+                        label6.Text = $"Số lượng làm mất sách: {lms}";
+                        break;
+
+                    case "Tình trạng sách":
+                        result = thongke.GetAllSach();
+                        int soNhap = thongke.sosachNhap();
+                        label2.Text = $"Tổng số sách nhập: {soNhap}";
+                        int soCon = thongke.sachControngKho();
+                        label5.Text = $"Số sách còn: {soCon}";
+                        label6.Text = null;
+                        break;
+
                     
-                    result = muonTra.timkiemsachdatra();
-                    label2.Text = $"Tong tien: {ketnoi.TongTien()}";
+                }
 
-                    break;
-
-
-
-                case "Tình trạng sách":
-                    result = sach.Getallbook(); // Lấy thông tin sách
-                    label2.Text = null;
-                    break;
-
+                if (result != null && result.Rows.Count > 0)
+                {
+                    dgv_baocao.DataSource = result;
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy dữ liệu.");
+                }
+                DataTable docGiaDaTra = thongke.GetDocGiaDaTra();
+                dgv_baocao.DataSource = result;
             }
-            DataTable docGiaDaTra = muonTra.GetDocGiaDaTra();
-            // Đổ dữ liệu vào DataGridView
-            dgv_baocao.DataSource = result;
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+            }
+            
         }
 
         private void FormBaoCaoThongKe_Load(object sender, EventArgs e)

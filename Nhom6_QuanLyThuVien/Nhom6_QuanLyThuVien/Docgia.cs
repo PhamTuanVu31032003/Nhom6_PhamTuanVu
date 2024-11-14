@@ -79,6 +79,17 @@ namespace Nhom6_QuanLyThuVien
             };
             return kn.Readdata(sql, sp);
         }
+
+        public DataTable Searchtendocgia(string tendocgia)
+        {
+            string sql = "SELECT * FROM DocGia WHERE HoTen LIKE @tenDG";
+            SqlParameter[] sp = new SqlParameter[]
+            {
+                new SqlParameter("@tenDG", "%" + tendocgia + "%")
+            };
+            return kn.Readdata(sql, sp);
+        }
+
         public int CountDocGia()
         {
             string sql = "SELECT COUNT(*) FROM DocGia";

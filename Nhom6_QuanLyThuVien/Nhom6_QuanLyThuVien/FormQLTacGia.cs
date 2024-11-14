@@ -74,5 +74,10 @@ namespace Nhom6_QuanLyThuVien
                 cb_gioitinh.Text = row.Cells["gioitinh"].Value.ToString();
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

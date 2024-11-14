@@ -64,6 +64,9 @@
             this.dgvMuonSach = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtGiaMuon = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -81,7 +84,7 @@
             // 
             // txtSluong
             // 
-            this.txtSluong.Location = new System.Drawing.Point(144, 136);
+            this.txtSluong.Location = new System.Drawing.Point(144, 115);
             this.txtSluong.Name = "txtSluong";
             this.txtSluong.Size = new System.Drawing.Size(91, 30);
             this.txtSluong.TabIndex = 15;
@@ -99,7 +102,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(13, 139);
+            this.label11.Location = new System.Drawing.Point(13, 118);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(82, 22);
             this.label11.TabIndex = 14;
@@ -108,7 +111,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 85);
+            this.label8.Location = new System.Drawing.Point(13, 77);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(80, 22);
             this.label8.TabIndex = 8;
@@ -118,7 +121,7 @@
             // 
             this.btnThem.Enabled = false;
             this.btnThem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(1096, 139);
+            this.btnThem.Location = new System.Drawing.Point(1119, 139);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(131, 44);
             this.btnThem.TabIndex = 13;
@@ -130,7 +133,7 @@
             // 
             this.btnSua.Enabled = false;
             this.btnSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(1096, 220);
+            this.btnSua.Location = new System.Drawing.Point(1119, 220);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(131, 44);
             this.btnSua.TabIndex = 18;
@@ -150,6 +153,9 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.label16);
+            this.groupBox5.Controls.Add(this.txtGiaMuon);
+            this.groupBox5.Controls.Add(this.label15);
             this.groupBox5.Controls.Add(this.cbTenSach);
             this.groupBox5.Controls.Add(this.label14);
             this.groupBox5.Controls.Add(this.txtGiaSach);
@@ -162,7 +168,7 @@
             this.groupBox5.Controls.Add(this.label11);
             this.groupBox5.Controls.Add(this.label8);
             this.groupBox5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(697, 45);
+            this.groupBox5.Location = new System.Drawing.Point(720, 45);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(366, 298);
             this.groupBox5.TabIndex = 20;
@@ -172,7 +178,7 @@
             // cbTenSach
             // 
             this.cbTenSach.FormattingEnabled = true;
-            this.cbTenSach.Location = new System.Drawing.Point(145, 84);
+            this.cbTenSach.Location = new System.Drawing.Point(144, 74);
             this.cbTenSach.Name = "cbTenSach";
             this.cbTenSach.Size = new System.Drawing.Size(204, 30);
             this.cbTenSach.TabIndex = 21;
@@ -182,7 +188,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(13, 195);
+            this.label14.Location = new System.Drawing.Point(13, 162);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(73, 22);
             this.label14.TabIndex = 19;
@@ -191,7 +197,7 @@
             // txtGiaSach
             // 
             this.txtGiaSach.Enabled = false;
-            this.txtGiaSach.Location = new System.Drawing.Point(144, 192);
+            this.txtGiaSach.Location = new System.Drawing.Point(144, 159);
             this.txtGiaSach.Name = "txtGiaSach";
             this.txtGiaSach.Size = new System.Drawing.Size(194, 30);
             this.txtGiaSach.TabIndex = 20;
@@ -216,7 +222,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(254, 139);
+            this.label12.Location = new System.Drawing.Point(247, 118);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(56, 22);
             this.label12.TabIndex = 16;
@@ -280,7 +286,7 @@
             // btnKienTra
             // 
             this.btnKienTra.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKienTra.Location = new System.Drawing.Point(1096, 55);
+            this.btnKienTra.Location = new System.Drawing.Point(1119, 55);
             this.btnKienTra.Name = "btnKienTra";
             this.btnKienTra.Size = new System.Drawing.Size(131, 44);
             this.btnKienTra.TabIndex = 21;
@@ -291,7 +297,7 @@
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(1096, 299);
+            this.btnXoa.Location = new System.Drawing.Point(1119, 299);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(131, 44);
             this.btnXoa.TabIndex = 19;
@@ -337,7 +343,7 @@
             this.groupBox3.Controls.Add(this.txtMaGD);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(271, 45);
+            this.groupBox3.Location = new System.Drawing.Point(294, 45);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(393, 298);
             this.groupBox3.TabIndex = 17;
@@ -347,7 +353,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 139);
+            this.label3.Location = new System.Drawing.Point(23, 136);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(154, 22);
             this.label3.TabIndex = 4;
@@ -356,11 +362,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 37);
+            this.label2.Location = new System.Drawing.Point(23, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 22);
             this.label2.TabIndex = 4;
             this.label2.Text = "Tìm kiếm theo";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // groupBox2
             // 
@@ -370,7 +377,7 @@
             this.groupBox2.Controls.Add(this.btnTim);
             this.groupBox2.Controls.Add(this.cbTim);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(2, 45);
+            this.groupBox2.Location = new System.Drawing.Point(25, 45);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(246, 298);
             this.groupBox2.TabIndex = 16;
@@ -380,9 +387,9 @@
             // txtTim
             // 
             this.txtTim.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTim.Location = new System.Drawing.Point(15, 179);
+            this.txtTim.Location = new System.Drawing.Point(27, 179);
             this.txtTim.Name = "txtTim";
-            this.txtTim.Size = new System.Drawing.Size(211, 30);
+            this.txtTim.Size = new System.Drawing.Size(199, 30);
             this.txtTim.TabIndex = 2;
             // 
             // btnTim
@@ -403,9 +410,9 @@
             this.cbTim.Items.AddRange(new object[] {
             "Mã độc giả",
             "Tên độc giả"});
-            this.cbTim.Location = new System.Drawing.Point(35, 77);
+            this.cbTim.Location = new System.Drawing.Point(27, 77);
             this.cbTim.Name = "cbTim";
-            this.cbTim.Size = new System.Drawing.Size(155, 30);
+            this.cbTim.Size = new System.Drawing.Size(199, 30);
             this.cbTim.TabIndex = 0;
             // 
             // dgvMuonSach
@@ -422,10 +429,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(550, 9);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(573, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(183, 33);
+            this.label1.Size = new System.Drawing.Size(189, 32);
             this.label1.TabIndex = 14;
             this.label1.Text = "MƯỢN SÁCH";
             // 
@@ -433,18 +440,44 @@
             // 
             this.groupBox1.Controls.Add(this.dgvMuonSach);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(2, 349);
+            this.groupBox1.Location = new System.Drawing.Point(25, 349);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1246, 248);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin ";
+            this.groupBox1.Text = "Danh sách giao dịch";
+            // 
+            // txtGiaMuon
+            // 
+            this.txtGiaMuon.Enabled = false;
+            this.txtGiaMuon.Location = new System.Drawing.Point(144, 199);
+            this.txtGiaMuon.Name = "txtGiaMuon";
+            this.txtGiaMuon.Size = new System.Drawing.Size(103, 30);
+            this.txtGiaMuon.TabIndex = 25;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(13, 202);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(89, 22);
+            this.label15.TabIndex = 24;
+            this.label15.Text = "Giá mượn";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(253, 202);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(77, 22);
+            this.label16.TabIndex = 26;
+            this.label16.Text = "/1 quyển";
             // 
             // FormQLMuon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1232, 612);
+            this.ClientSize = new System.Drawing.Size(1301, 612);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.groupBox5);
@@ -508,5 +541,8 @@
         private System.Windows.Forms.DataGridView dgvMuonSach;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtGiaMuon;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
     }
 }

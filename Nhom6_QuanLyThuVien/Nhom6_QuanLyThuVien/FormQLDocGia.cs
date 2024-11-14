@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -112,24 +113,43 @@ namespace Nhom6_QuanLyThuVien
 
         private void btntimkiem_Click(object sender, EventArgs e)
         {
-            string madocgia = txt_timkiem.Text.Trim();
-            if (!string.IsNullOrEmpty(madocgia))
+            try
             {
-                DataTable dt = docgia.Searchmadocgia(madocgia);
-                if (dt.Rows.Count > 0)
+                string giaTriTimKiem = txt_timkiem.Text.Trim();
+
+                if (string.IsNullOrEmpty(giaTriTimKiem))
                 {
-                    dgv_docgia.DataSource = dt;
+                    MessageBox.Show("Vui lòng nhập giá trị tìm kiếm.");
+                    return;
+                }
+
+                DataTable ketQuaTimKiem;
+
+                if (cb_Timkiem.SelectedIndex == 0) 
+                {
+                    ketQuaTimKiem = docgia.Searchmadocgia(giaTriTimKiem);
+                }
+                else if (cb_Timkiem.SelectedIndex == 1) 
+                {
+                    ketQuaTimKiem = docgia.Searchtendocgia(giaTriTimKiem);
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy độc giả với mã này.");
-                    FormQLDocGia_Load(sender, e); // Tải lại toàn bộ dữ liệu nếu không tìm thấy
+                    MessageBox.Show("Vui lòng chọn kiểu tìm kiếm.");
+                    return;
                 }
+
+                dgv_docgia.DataSource = ketQuaTimKiem;
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng nhập mã độc giả để tìm kiếm.");
+                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
             }
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
