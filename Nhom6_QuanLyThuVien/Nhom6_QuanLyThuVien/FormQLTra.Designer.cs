@@ -59,6 +59,7 @@
             this.txtMaGD = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.ckb_Mat = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTraSach)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -69,12 +70,12 @@
             // 
             this.groupBox1.Controls.Add(this.dgvTraSach);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(61, 350);
+            this.groupBox1.Location = new System.Drawing.Point(34, 368);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1075, 248);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin ";
+            this.groupBox1.Text = "Danh sách giao dịch";
             // 
             // dgvTraSach
             // 
@@ -91,10 +92,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(519, 9);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(492, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 33);
+            this.label1.Size = new System.Drawing.Size(157, 32);
             this.label1.TabIndex = 17;
             this.label1.Text = "TRẢ SÁCH";
             // 
@@ -109,7 +110,7 @@
             // btnTim
             // 
             this.btnTim.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim.Location = new System.Drawing.Point(54, 236);
+            this.btnTim.Location = new System.Drawing.Point(54, 251);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(131, 39);
             this.btnTim.TabIndex = 3;
@@ -137,9 +138,9 @@
             this.groupBox2.Controls.Add(this.btnTim);
             this.groupBox2.Controls.Add(this.cbTim);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(61, 46);
+            this.groupBox2.Location = new System.Drawing.Point(34, 46);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(246, 298);
+            this.groupBox2.Size = new System.Drawing.Size(246, 316);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm";
@@ -208,7 +209,7 @@
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(651, 236);
+            this.btnXoa.Location = new System.Drawing.Point(640, 246);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(131, 44);
             this.btnXoa.TabIndex = 18;
@@ -219,7 +220,7 @@
             // txtTinhTrang
             // 
             this.txtTinhTrang.Enabled = false;
-            this.txtTinhTrang.Location = new System.Drawing.Point(574, 176);
+            this.txtTinhTrang.Location = new System.Drawing.Point(566, 128);
             this.txtTinhTrang.Name = "txtTinhTrang";
             this.txtTinhTrang.Size = new System.Drawing.Size(179, 30);
             this.txtTinhTrang.TabIndex = 16;
@@ -227,7 +228,7 @@
             // btnSua
             // 
             this.btnSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(457, 236);
+            this.btnSua.Location = new System.Drawing.Point(439, 246);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(131, 44);
             this.btnSua.TabIndex = 17;
@@ -238,7 +239,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(443, 179);
+            this.label7.Location = new System.Drawing.Point(435, 131);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(90, 22);
             this.label7.TabIndex = 17;
@@ -248,7 +249,7 @@
             // 
             this.dtpNgayTra.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayTra.Location = new System.Drawing.Point(574, 128);
+            this.dtpNgayTra.Location = new System.Drawing.Point(566, 80);
             this.dtpNgayTra.Name = "dtpNgayTra";
             this.dtpNgayTra.Size = new System.Drawing.Size(179, 30);
             this.dtpNgayTra.TabIndex = 15;
@@ -256,7 +257,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(444, 134);
+            this.label6.Location = new System.Drawing.Point(436, 86);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 22);
             this.label6.TabIndex = 14;
@@ -267,7 +268,7 @@
             this.dtpNgayPTra.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayPTra.Enabled = false;
             this.dtpNgayPTra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayPTra.Location = new System.Drawing.Point(574, 82);
+            this.dtpNgayPTra.Location = new System.Drawing.Point(566, 34);
             this.dtpNgayPTra.Name = "dtpNgayPTra";
             this.dtpNgayPTra.Size = new System.Drawing.Size(179, 30);
             this.dtpNgayPTra.TabIndex = 13;
@@ -275,7 +276,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(444, 85);
+            this.label10.Location = new System.Drawing.Point(436, 37);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(116, 22);
             this.label10.TabIndex = 12;
@@ -286,7 +287,7 @@
             this.dtpNgayMuon.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayMuon.Enabled = false;
             this.dtpNgayMuon.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayMuon.Location = new System.Drawing.Point(574, 34);
+            this.dtpNgayMuon.Location = new System.Drawing.Point(148, 270);
             this.dtpNgayMuon.Name = "dtpNgayMuon";
             this.dtpNgayMuon.Size = new System.Drawing.Size(179, 30);
             this.dtpNgayMuon.TabIndex = 11;
@@ -294,7 +295,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(443, 38);
+            this.label9.Location = new System.Drawing.Point(17, 274);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(101, 22);
             this.label9.TabIndex = 10;
@@ -310,6 +311,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.ckb_Mat);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.txtSluong);
             this.groupBox3.Controls.Add(this.label12);
@@ -332,9 +334,9 @@
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(330, 46);
+            this.groupBox3.Location = new System.Drawing.Point(303, 46);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(806, 298);
+            this.groupBox3.Size = new System.Drawing.Size(806, 316);
             this.groupBox3.TabIndex = 20;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin ";
@@ -382,11 +384,21 @@
             this.label8.TabIndex = 8;
             this.label8.Text = "Tên sách";
             // 
+            // ckb_Mat
+            // 
+            this.ckb_Mat.AutoSize = true;
+            this.ckb_Mat.Location = new System.Drawing.Point(566, 179);
+            this.ckb_Mat.Name = "ckb_Mat";
+            this.ckb_Mat.Size = new System.Drawing.Size(103, 26);
+            this.ckb_Mat.TabIndex = 24;
+            this.ckb_Mat.Text = "Mất sách";
+            this.ckb_Mat.UseVisualStyleBackColor = true;
+            // 
             // FormQLTra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1204, 547);
+            this.ClientSize = new System.Drawing.Size(1149, 628);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
@@ -438,5 +450,6 @@
         private System.Windows.Forms.TextBox txtMaGD;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.CheckBox ckb_Mat;
     }
 }

@@ -65,6 +65,7 @@ namespace Nhom6_QuanLyThuVien
             try
             {
                 string maGD = txtMaGD.Text;
+                string maSach = tra.GetMaSachByMaGiaoDich(maGD);
                 if (string.IsNullOrEmpty(maGD))
                 {
                     MessageBox.Show("Vui lòng chọn giao dịch để cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -81,19 +82,28 @@ namespace Nhom6_QuanLyThuVien
                 DateTime ngayPhaiTra = dtpNgayPTra.Value;
                 DateTime? ngayTra = dtpNgayTra.CustomFormat == " " ? (DateTime?)null : dtpNgayTra.Value;
 
-                string tinhTrang = tra.KiemTraTinhTrang(ngayTra, ngayPhaiTra);
-
-                if (tinhTrang == "Đã trả" || tinhTrang == "Trả quá hạn")
+                string tinhtrang;
+                if (ckb_Mat.Checked)
                 {
-                    string maSach = tra.GetMaSachByMaGiaoDich(maGD);
+                    tinhtrang = "Làm mất sách";
+                    tra.UpdateSoLuongSachCon(maSach, soLuongTra);
+                }
+                else
+                {
+                    tinhtrang = tra.KiemTraTinhTrang(ngayTra, ngayPhaiTra);
+                }
+
+                if (tinhtrang == "Đã trả" || tinhtrang == "Trả quá hạn")
+                {
+                    
                     if (!string.IsNullOrEmpty(maSach))
                     {
                         tra.UpdateSoLuongSachConSauTra(maSach, soLuongTra);
                     }
                 }
 
-                tra.UpdateTra(maGD, ngayTra, tinhTrang);
-                txtTinhTrang.Text = tinhTrang;
+                tra.UpdateTra(maGD, ngayTra, tinhtrang);
+                txtTinhTrang.Text = tinhtrang;
 
                 MessageBox.Show("Cập nhật thông tin trả sách thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

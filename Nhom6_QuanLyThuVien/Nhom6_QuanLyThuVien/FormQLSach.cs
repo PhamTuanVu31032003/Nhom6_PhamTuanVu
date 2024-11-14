@@ -17,6 +17,7 @@ namespace Nhom6_QuanLyThuVien
         {
             InitializeComponent();
             LoadMaTacGiaComboBox();
+            dgv_sach.DataSource = sach.Getallbook();
         }
 
         private void btn_them_Click(object sender, EventArgs e)

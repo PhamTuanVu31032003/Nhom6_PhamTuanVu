@@ -263,10 +263,10 @@ namespace Nhom6_QuanLyThuVien
             DataTable dtsach = muonTra.GetAllTenSach();
 
             cbTenSach.DataSource = dtsach;
-            cbTenSach.DisplayMember = "TenSach"; // Cột hiển thị
+            cbTenSach.DisplayMember = "TenSach"; 
             cbTenSach.ValueMember = "TenSach";
 
-            cbTenSach.SelectedIndex = -1; // Không chọn mục nào ban đầu
+            cbTenSach.SelectedIndex = -1;
         }
 
         private void LoadMaDGToComboBox()
@@ -274,10 +274,10 @@ namespace Nhom6_QuanLyThuVien
             DataTable dtDG = muonTra.GetAllMaDG();
 
             cbDocGia.DataSource = dtDG;
-            cbDocGia.DisplayMember = "MaDocGia"; // Cột hiển thị
+            cbDocGia.DisplayMember = "MaDocGia"; 
             cbDocGia.ValueMember = "MaDocGia";
 
-            cbDocGia.SelectedIndex = -1; // Không chọn mục nào ban đầu
+            cbDocGia.SelectedIndex = -1;
         }
 
         private void LoadTenDGToComboBox()
@@ -285,10 +285,10 @@ namespace Nhom6_QuanLyThuVien
             DataTable dtTenDG = muonTra.GetAllTenDG();
 
             cbTenDG.DataSource = dtTenDG;
-            cbTenDG.DisplayMember = "HoTen"; // Cột hiển thị
+            cbTenDG.DisplayMember = "HoTen";
             cbTenDG.ValueMember = "HoTen";
 
-            cbTenDG.SelectedIndex = -1; // Không chọn mục nào ban đầu
+            cbTenDG.SelectedIndex = -1; 
         }
 
         private void cbTenSach_Validated(object sender, EventArgs e)
@@ -298,26 +298,24 @@ namespace Nhom6_QuanLyThuVien
 
         private void cbTenSach_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Kiểm tra xem ComboBox có giá trị hợp lệ không
             if (cbTenSach.SelectedItem != null && cbTenSach.SelectedIndex != -1)
             {
                 string tenSach = cbTenSach.SelectedValue?.ToString();
 
                 if (!string.IsNullOrEmpty(tenSach))
                 {
-                    // Lấy mã sách từ tên sách
 
                     string maSach = muonTra.getMaSach(tenSach);
 
-                    if (!string.IsNullOrEmpty(maSach)) // Kiểm tra mã sách có tồn tại không
+                    if (!string.IsNullOrEmpty(maSach)) 
                     {
-                        // Lấy giá tiền từ cơ sở dữ liệu dựa trên mã sách
                         DataTable dtGia = muonTra.getPrice(maSach);
+                        DataTable dtGiaMuon = muonTra.getPriceMuon(maSach);
                         if (dtGia != null && dtGia.Rows.Count > 0)
                         {
-                            // Hiển thị giá tiền vào textBoxGiaTien
                             txtGiaSach.Text = dtGia.Rows[0]["Gia"].ToString();
-                            TinhThanhTien(); // Gọi hàm tính toán thành tiền
+                            txtGiaMuon.Text = dtGiaMuon.Rows[0]["GiaMuon"].ToString();
+                            TinhThanhTien(); 
                         }
                         else
                         {
@@ -334,11 +332,11 @@ namespace Nhom6_QuanLyThuVien
         }
         private void TinhThanhTien()
         {
-            // Kiểm tra nếu số lượng và giá tiền có giá trị hợp lệ
-            if (int.TryParse(txtSluong.Text, out int soLuong) && decimal.TryParse(txtGiaSach.Text, out decimal giaTien))
+            if (int.TryParse(txtSluong.Text, out int soLuong) && decimal.TryParse(txtGiaSach.Text, out decimal giaTien)
+                && decimal.TryParse(txtGiaMuon.Text, out decimal giaMuon))
             {
-                decimal thanhTien = soLuong * giaTien;
-                txtThanhTien.Text = thanhTien.ToString("N0"); // Định dạng tiền tệ
+                decimal thanhTien = (soLuong * giaMuon) + giaTien;
+                txtThanhTien.Text = thanhTien.ToString("N0");
             }
             else
             {
@@ -424,7 +422,11 @@ namespace Nhom6_QuanLyThuVien
             dtpNgayMuon.Value = DateTime.Now;
             dtpNgayTra.Value = DateTime.Now;
         }
-          
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
