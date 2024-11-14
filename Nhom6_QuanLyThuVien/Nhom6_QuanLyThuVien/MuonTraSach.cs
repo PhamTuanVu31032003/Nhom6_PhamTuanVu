@@ -18,7 +18,7 @@ namespace Nhom6_QuanLyThuVien
             kn = new Ketnoi();
         }
 
-        #region lấy các tt tù databsae
+      
         // lay du lieu bang 
         public DataTable GetAll()
         {
@@ -175,9 +175,9 @@ namespace Nhom6_QuanLyThuVien
             string sql = "SELECT * FROM MuonTra WHERE TinhTrang =N'Đã trả';";
             return kn.Readdata(sql);
         }
-        #endregion
+      
         
-        #region dùng cho form qly mượn
+       
 
         //thêm lượt mượn
         public void CreateMuon(string maGD, string maDG, string tenDG, string maS, string tenS,
@@ -245,9 +245,9 @@ namespace Nhom6_QuanLyThuVien
             };
             kn.CUD(sql, sp);
         }
-        #endregion
+     
 
-        #region dùng cho qly trả
+        
         //kiểm tr tình trạng trả sách
         public string KiemTraTinhTrang(DateTime? ngayTra, DateTime ngayPhaiTra)
         {
@@ -334,9 +334,9 @@ namespace Nhom6_QuanLyThuVien
                 MessageBox.Show("Lỗi khi cập nhật trạng thái: " + ex.Message);
             }
         }
-        #endregion
+     
 
-        #region tìm kiếm theo tên & mã độc giả 
+       
         //tìm kiếm
         public DataTable SearchMA(string maDG)
         {
@@ -374,10 +374,10 @@ namespace Nhom6_QuanLyThuVien
         DocGia.MaDocGia, DocGia.HoTen";
 
             DataTable dt = kn.Readdata(sql);
-            MessageBox.Show("Số lượng dòng trả về: " + dt.Rows.Count);
+           // MessageBox.Show("Số lượng dòng trả về: " + dt.Rows.Count);
             return dt;
         }
-        #endregion
+      
     }
 }
 

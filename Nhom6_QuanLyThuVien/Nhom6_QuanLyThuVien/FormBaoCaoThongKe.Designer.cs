@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.cbThongKe = new System.Windows.Forms.ComboBox();
-            this.btnlammoi = new System.Windows.Forms.Button();
             this.btnexcel = new System.Windows.Forms.Button();
             this.dgv_baocao = new System.Windows.Forms.DataGridView();
             this.btnbaocao = new System.Windows.Forms.Button();
@@ -40,46 +39,41 @@
             // 
             // cbThongKe
             // 
+            this.cbThongKe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbThongKe.FormattingEnabled = true;
             this.cbThongKe.Location = new System.Drawing.Point(318, 56);
             this.cbThongKe.Name = "cbThongKe";
-            this.cbThongKe.Size = new System.Drawing.Size(283, 24);
+            this.cbThongKe.Size = new System.Drawing.Size(283, 30);
             this.cbThongKe.TabIndex = 25;
-            // 
-            // btnlammoi
-            // 
-            this.btnlammoi.Location = new System.Drawing.Point(352, 142);
-            this.btnlammoi.Name = "btnlammoi";
-            this.btnlammoi.Size = new System.Drawing.Size(75, 36);
-            this.btnlammoi.TabIndex = 24;
-            this.btnlammoi.Text = "Làm mới";
-            this.btnlammoi.UseVisualStyleBackColor = true;
             // 
             // btnexcel
             // 
-            this.btnexcel.Location = new System.Drawing.Point(515, 142);
+            this.btnexcel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnexcel.Location = new System.Drawing.Point(446, 149);
             this.btnexcel.Name = "btnexcel";
-            this.btnexcel.Size = new System.Drawing.Size(100, 36);
+            this.btnexcel.Size = new System.Drawing.Size(124, 36);
             this.btnexcel.TabIndex = 23;
             this.btnexcel.Text = "Xuất excel";
             this.btnexcel.UseVisualStyleBackColor = true;
+            this.btnexcel.Click += new System.EventHandler(this.btnexcel_Click);
             // 
             // dgv_baocao
             // 
             this.dgv_baocao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_baocao.Location = new System.Drawing.Point(55, 262);
+            this.dgv_baocao.Location = new System.Drawing.Point(12, 301);
             this.dgv_baocao.Name = "dgv_baocao";
             this.dgv_baocao.ReadOnly = true;
             this.dgv_baocao.RowHeadersWidth = 51;
             this.dgv_baocao.RowTemplate.Height = 24;
-            this.dgv_baocao.Size = new System.Drawing.Size(972, 225);
+            this.dgv_baocao.Size = new System.Drawing.Size(1019, 225);
             this.dgv_baocao.TabIndex = 22;
             // 
             // btnbaocao
             // 
-            this.btnbaocao.Location = new System.Drawing.Point(145, 142);
+            this.btnbaocao.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnbaocao.Location = new System.Drawing.Point(214, 149);
             this.btnbaocao.Name = "btnbaocao";
-            this.btnbaocao.Size = new System.Drawing.Size(112, 36);
+            this.btnbaocao.Size = new System.Drawing.Size(143, 36);
             this.btnbaocao.TabIndex = 21;
             this.btnbaocao.Text = "Tạo báo cáo";
             this.btnbaocao.UseVisualStyleBackColor = true;
@@ -97,9 +91,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(690, 161);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(696, 149);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
+            this.label2.Size = new System.Drawing.Size(60, 22);
             this.label2.TabIndex = 26;
             this.label2.Text = "label2";
             // 
@@ -110,7 +105,6 @@
             this.ClientSize = new System.Drawing.Size(1147, 538);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbThongKe);
-            this.Controls.Add(this.btnlammoi);
             this.Controls.Add(this.btnexcel);
             this.Controls.Add(this.dgv_baocao);
             this.Controls.Add(this.btnbaocao);
@@ -127,7 +121,6 @@
         #endregion
 
         private System.Windows.Forms.ComboBox cbThongKe;
-        private System.Windows.Forms.Button btnlammoi;
         private System.Windows.Forms.Button btnexcel;
         private System.Windows.Forms.DataGridView dgv_baocao;
         private System.Windows.Forms.Button btnbaocao;
