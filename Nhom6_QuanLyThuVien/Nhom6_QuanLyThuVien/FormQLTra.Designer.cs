@@ -54,12 +54,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtTenS = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.ckb_Mat = new System.Windows.Forms.CheckBox();
             this.txtMaDG = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtMaGD = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.ckb_Mat = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTraSach)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -341,6 +341,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin ";
             // 
+            // ckb_Mat
+            // 
+            this.ckb_Mat.AutoSize = true;
+            this.ckb_Mat.Location = new System.Drawing.Point(566, 179);
+            this.ckb_Mat.Name = "ckb_Mat";
+            this.ckb_Mat.Size = new System.Drawing.Size(103, 26);
+            this.ckb_Mat.TabIndex = 24;
+            this.ckb_Mat.Text = "Mất sách";
+            this.ckb_Mat.UseVisualStyleBackColor = true;
+            // 
             // txtMaDG
             // 
             this.txtMaDG.Enabled = false;
@@ -384,26 +394,18 @@
             this.label8.TabIndex = 8;
             this.label8.Text = "Tên sách";
             // 
-            // ckb_Mat
-            // 
-            this.ckb_Mat.AutoSize = true;
-            this.ckb_Mat.Location = new System.Drawing.Point(566, 179);
-            this.ckb_Mat.Name = "ckb_Mat";
-            this.ckb_Mat.Size = new System.Drawing.Size(103, 26);
-            this.ckb_Mat.TabIndex = 24;
-            this.ckb_Mat.Text = "Mất sách";
-            this.ckb_Mat.UseVisualStyleBackColor = true;
-            // 
             // FormQLTra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1149, 628);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Name = "FormQLTra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormQLTra";
             this.Load += new System.EventHandler(this.FormQLTra_Load);
             this.groupBox1.ResumeLayout(false);

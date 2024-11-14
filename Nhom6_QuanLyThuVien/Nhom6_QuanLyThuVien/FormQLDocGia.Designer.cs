@@ -54,10 +54,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cb_Timkiem = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.cb_Timkiem = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_docgia)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -320,6 +320,28 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(26, 132);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(124, 22);
+            this.label11.TabIndex = 79;
+            this.label11.Text = "Nhập thông tin";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // cb_Timkiem
+            // 
+            this.cb_Timkiem.FormattingEnabled = true;
+            this.cb_Timkiem.Items.AddRange(new object[] {
+            "Mã độc giả",
+            "Tên độc giả"});
+            this.cb_Timkiem.Location = new System.Drawing.Point(30, 76);
+            this.cb_Timkiem.Name = "cb_Timkiem";
+            this.cb_Timkiem.Size = new System.Drawing.Size(166, 30);
+            this.cb_Timkiem.TabIndex = 78;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txt_email);
@@ -360,38 +382,18 @@
             this.label10.TabIndex = 81;
             this.label10.Text = "QUẢN LÝ ĐỘC GIẢ";
             // 
-            // cb_Timkiem
-            // 
-            this.cb_Timkiem.FormattingEnabled = true;
-            this.cb_Timkiem.Items.AddRange(new object[] {
-            "Mã độc giả",
-            "Tên độc giả"});
-            this.cb_Timkiem.Location = new System.Drawing.Point(30, 76);
-            this.cb_Timkiem.Name = "cb_Timkiem";
-            this.cb_Timkiem.Size = new System.Drawing.Size(166, 30);
-            this.cb_Timkiem.TabIndex = 78;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(26, 132);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(124, 22);
-            this.label11.TabIndex = 79;
-            this.label11.Text = "Nhập thông tin";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
-            // 
             // FormQLDocGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1148, 647);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormQLDocGia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormQLDocGia";
             this.Load += new System.EventHandler(this.FormQLDocGia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_docgia)).EndInit();

@@ -294,6 +294,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(827, 593);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -305,6 +306,7 @@
             this.Controls.Add(this.btnsua);
             this.Controls.Add(this.btnthem);
             this.Name = "FormQLTacGia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormQLTacGia";
             this.Load += new System.EventHandler(this.FormQLTacGia_Load);
             this.groupBox1.ResumeLayout(false);

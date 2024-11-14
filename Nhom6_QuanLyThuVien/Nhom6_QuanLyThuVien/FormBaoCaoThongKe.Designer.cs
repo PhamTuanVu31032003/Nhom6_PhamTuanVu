@@ -39,8 +39,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_baocao)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -102,11 +102,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            this.label2.Location = new System.Drawing.Point(691, 156);
-
             this.label2.Location = new System.Drawing.Point(17, 43);
-
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 22);
             this.label2.TabIndex = 26;
@@ -169,14 +165,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông báo";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 95);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 22);
-            this.label5.TabIndex = 27;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -185,10 +173,19 @@
             this.label6.Size = new System.Drawing.Size(0, 22);
             this.label6.TabIndex = 28;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(17, 95);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 22);
+            this.label5.TabIndex = 27;
+            // 
             // FormBaoCaoThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(887, 538);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -196,6 +193,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "FormBaoCaoThongKe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormBaoCaoThongKe";
             this.Load += new System.EventHandler(this.FormBaoCaoThongKe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_baocao)).EndInit();

@@ -37,6 +37,9 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.cbTenDG = new System.Windows.Forms.ComboBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtGiaMuon = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.cbTenSach = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtGiaSach = new System.Windows.Forms.TextBox();
@@ -64,9 +67,6 @@
             this.dgvMuonSach = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtGiaMuon = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -174,6 +174,32 @@
             this.groupBox5.TabIndex = 20;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Chọn sách";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(253, 202);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(77, 22);
+            this.label16.TabIndex = 26;
+            this.label16.Text = "/1 quyển";
+            // 
+            // txtGiaMuon
+            // 
+            this.txtGiaMuon.Enabled = false;
+            this.txtGiaMuon.Location = new System.Drawing.Point(144, 199);
+            this.txtGiaMuon.Name = "txtGiaMuon";
+            this.txtGiaMuon.Size = new System.Drawing.Size(103, 30);
+            this.txtGiaMuon.TabIndex = 25;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(13, 202);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(89, 22);
+            this.label15.TabIndex = 24;
+            this.label15.Text = "Giá mượn";
             // 
             // cbTenSach
             // 
@@ -447,36 +473,11 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách giao dịch";
             // 
-            // txtGiaMuon
-            // 
-            this.txtGiaMuon.Enabled = false;
-            this.txtGiaMuon.Location = new System.Drawing.Point(144, 199);
-            this.txtGiaMuon.Name = "txtGiaMuon";
-            this.txtGiaMuon.Size = new System.Drawing.Size(103, 30);
-            this.txtGiaMuon.TabIndex = 25;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(13, 202);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(89, 22);
-            this.label15.TabIndex = 24;
-            this.label15.Text = "Giá mượn";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(253, 202);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(77, 22);
-            this.label16.TabIndex = 26;
-            this.label16.Text = "/1 quyển";
-            // 
             // FormQLMuon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1301, 612);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.btnSua);
@@ -488,6 +489,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormQLMuon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormQLMuon";
             this.Load += new System.EventHandler(this.FormQLMuon_Load);
             this.groupBox5.ResumeLayout(false);

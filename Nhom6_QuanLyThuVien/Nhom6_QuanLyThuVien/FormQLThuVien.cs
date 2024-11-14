@@ -24,22 +24,26 @@ namespace Nhom6_QuanLyThuVien
         private void quảnLýĐộcGiảToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             FormQLDocGia formQLDocgia = new FormQLDocGia();
-            formQLDocgia.MdiParent = this;
-            formQLDocgia.Show();
+            this.Hide();
+            formQLDocgia.ShowDialog();
+            this.Show();
+            
         }
 
         private void quảnLýSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormQLSach formQlSach = new FormQLSach();
-            formQlSach.MdiParent = this;
-            formQlSach.Show();
+            this.Hide();
+            formQlSach.ShowDialog();
+            this.Show();
         }
 
         private void quảnLýTácGiảToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormQLTacGia formQLTacGia = new FormQLTacGia();
-            formQLTacGia.MdiParent = this;
-            formQLTacGia.Show();
+            this.Hide();
+            formQLTacGia.ShowDialog();
+            this.Show();
         }
 
         
@@ -47,22 +51,25 @@ namespace Nhom6_QuanLyThuVien
         private void quảnLýMượnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormQLMuon formQLMuon = new FormQLMuon();
-            formQLMuon.MdiParent = this;
-            formQLMuon.Show();
+            this.Hide();
+            formQLMuon.ShowDialog();
+            this.Show();
         }
 
         private void quảnLýTrảToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormQLTra formQLTra = new FormQLTra();
-            formQLTra.MdiParent = this;
-            formQLTra.Show();
+            this.Hide();
+            formQLTra.ShowDialog();
+            this.Show();
         }
 
         private void báoCáoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormBaoCaoThongKe formBaoCaoThongKe = new FormBaoCaoThongKe();
-            formBaoCaoThongKe.MdiParent = this;
-            formBaoCaoThongKe.Show();
+            this.Hide();
+            formBaoCaoThongKe.ShowDialog();
+            this.Show();
         }
     }
 }
