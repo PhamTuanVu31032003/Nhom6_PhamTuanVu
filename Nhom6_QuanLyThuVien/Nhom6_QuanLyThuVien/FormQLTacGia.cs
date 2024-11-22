@@ -53,23 +53,40 @@ namespace Nhom6_QuanLyThuVien
 
         private void btntimkiem_Click(object sender, EventArgs e)
         {
-            string tim = txt_matacgia.Text.Trim();
-
-            DataTable ketQuaTimKiem;
-            if (cbTim.SelectedIndex == 0)
+            try
             {
-                ketQuaTimKiem = tg.SearchmaTacGia(tim);
+                string giaTriTimKiem = txtTim.Text.Trim();
+
+                if (string.IsNullOrEmpty(giaTriTimKiem))
+                {
+                    MessageBox.Show("Vui lòng nhập giá trị tìm kiếm.");
+                    return;
+                }
+
+                DataTable ketQuaTimKiem;
+
+
+                if (cbTim.SelectedIndex == 0)
+                {
+                    ketQuaTimKiem = tg.SearchmaTacGia(giaTriTimKiem);
+                }
+                else if (cbTim.SelectedIndex == 1) 
+                {
+                    ketQuaTimKiem = tg.SearchtenTacGia(giaTriTimKiem);
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn kiểu tìm kiếm.");
+                    return;
+                }
+
+                dataGridView1.DataSource = ketQuaTimKiem;
             }
-            else if (cbTim.SelectedIndex == 1)
+            catch (Exception ex)
             {
-                ketQuaTimKiem = tg.SearchmaTacGia(tim);
-            }
-            else {
-                MessageBox.Show("Vui lòng chọn để tìm kiếm!");
-                return;
+                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
             }
 
-            dataGridView1.DataSource = ketQuaTimKiem;
         }
 
         private void Thoat_Click(object sender, EventArgs e)
