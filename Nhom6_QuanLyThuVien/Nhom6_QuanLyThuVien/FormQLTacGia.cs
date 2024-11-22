@@ -54,7 +54,22 @@ namespace Nhom6_QuanLyThuVien
         private void btntimkiem_Click(object sender, EventArgs e)
         {
             string tim = txt_matacgia.Text.Trim();
-            dataGridView1.DataSource = tg.SearchmaTacGia(tim);
+
+            DataTable ketQuaTimKiem;
+            if (cbTim.SelectedIndex == 0)
+            {
+                ketQuaTimKiem = tg.SearchmaTacGia(tim);
+            }
+            else if (cbTim.SelectedIndex == 1)
+            {
+                ketQuaTimKiem = tg.SearchmaTacGia(tim);
+            }
+            else {
+                MessageBox.Show("Vui lòng chọn để tìm kiếm!");
+                return;
+            }
+
+            dataGridView1.DataSource = ketQuaTimKiem;
         }
 
         private void Thoat_Click(object sender, EventArgs e)
