@@ -49,7 +49,7 @@ namespace Nhom6_QuanLyThuVien
         }
         public void Updatebook(string Masach, string Tensach, string Matg, string Nhaxb, int Namxb, string theloai, int Soluong, int soluongconlai, string gia, int giamuon)
         {
-            string sql = "UPDATE Sach SET TenSach = @TenSach, NhaXuatBan = @NhaXuatBan, NamXuatBan = @NamXuatBan, TheLoai = @TheLoai, SoLuong = @SoLuong, SoLuongConLai = @SoLuongConLai, Gia = @Gia, GiaMuon = @GiaMuon" +
+            string sql = "UPDATE Sach SET TenSach = @TenSach, NhaXuatBan = @NhaXuatBan, NamXuatBan = @NamXuatBan, TheLoai = @TheLoai, SoLuong = @SoLuong, SoLuongConLai = @SoLuongConLai, Gia = @Gia, GiaMuon = @GiaMuon " +
             "WHERE MaSach = @MaSach;"; // truyen vao cac tham so 
             SqlParameter[] sp = new SqlParameter[]
             {

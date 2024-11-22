@@ -57,19 +57,19 @@ namespace Nhom6_QuanLyThuVien
         }
         public DataTable SearchmaTacGia(string MaTacGia)
         {
-            string sql = "SELECT * FROM TacGia Where MaTacGia = @maTacGia";
+            string sql = "SELECT * FROM TacGia Where MaTacGia LIKE @maTacGia";
             SqlParameter[] sp = new SqlParameter[]
             {
-                new SqlParameter("@maTacGia", MaTacGia)
+                new SqlParameter("@maTacGia","%"+ MaTacGia+"%")
             };
             return kn.Readdata(sql, sp);
         }
         public DataTable SearchtenTacGia(string TenTacGia)
         {
-            string sql = "SELECT * FROM TacGia Where TenTacGia = @tenTacGia";
+            string sql = "SELECT * FROM TacGia Where TenTacGia LIKE @tenTacGia";
             SqlParameter[] sp = new SqlParameter[]
             {
-                new SqlParameter("@tenTacGia", TenTacGia)
+                new SqlParameter("@tenTacGia", "%"+TenTacGia+"%")
             };
             return kn.Readdata(sql, sp);
         }
